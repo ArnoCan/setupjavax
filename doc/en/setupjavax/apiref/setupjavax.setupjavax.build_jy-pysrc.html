@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>setupjavax.setupjavax.build_jy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setupjavax">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="subnavbar" width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td>
+      <table class="items" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <span class="options">
+                  <a href="frames.html" target="_top">&lt;Frames(L)</a>
+                </span>
+                &nbsp;
+            </td>
+            <td align="center">
+                &#124;
+                &nbsp;
+                <span class="options">
+                    <a href="setupjavax.setupjavax.build_jy-pysrc.html" target="_top">No&nbsp;Frames</a>
+                </span>
+                &nbsp;
+                &#124;
+            </td>
+            <td align="center">
+                &nbsp;
+                <span class="options">
+                   <a href="frames-right.html" target="_top">Frames(R)&gt;</a>
+                </span>
+            </td>
+           </tr>
+      </table>
+    </td>
+    <td>
+    </td>
+ </tr>
+ <tr>
+</table>
+      <span class="breadcrumbs">
+        Package&nbsp;setupjavax ::
+        <a href="setupjavax.setupjavax-module.html">Package&nbsp;setupjavax</a> ::
+        Module&nbsp;build_jy
+      </span>
+<h1 class="epydoc">Source Code for <a href="setupjavax.setupjavax.build_jy-module.html">Module setupjavax.setupjavax.build_jy</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">&quot;&quot;&quot;Compiles Python and Java modules required for *Jython*.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">Supports default standard paths only.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">&quot;&quot;&quot;</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">__future__</tt> <tt class="py-keyword">import</tt> <tt class="py-name">absolute_import</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">__future__</tt> <tt class="py-keyword">import</tt> <tt class="py-name">print_function</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># REMINDER: import distutils.cmd</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">setuptools</tt><tt class="py-op">.</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">shutil</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">yapyutils</tt><tt class="py-op">.</tt><tt class="py-name">files</tt><tt class="py-op">.</tt><tt class="py-name">finder</tt> <tt class="py-keyword">import</tt> <tt class="py-name">find_files</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package setupjavax.setupjavax=setupjavax.setupjavax-module.html"><a title="setupjavax.setupjavax" class="py-name" href="#" onclick="return doclink('link-0', 'setupjavax', 'link-0');">setupjavax</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class setupjavax.setupjavax.SetupJavaXError=setupjavax.setupjavax.SetupJavaXError-class.html"><a title="setupjavax.setupjavax.SetupJavaXError" class="py-name" href="#" onclick="return doclink('link-1', 'SetupJavaXError', 'link-1');">SetupJavaXError</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-name">__author__</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;Arno-Can Uestuensoez&#x27;</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable setupjavax.setupjavax.build_jy.__author_email__=setupjavax.setupjavax.build_jy-module.html#__author_email__,Variable setupjavax.setup.__author_email__=setupjavax.setup-module.html#__author_email__,Variable setupjavax.setupjavax.__author_email__=setupjavax.setupjavax-module.html#__author_email__,Variable setupjavax.setupjavax.build_java.__author_email__=setupjavax.setupjavax.build_java-module.html#__author_email__"><a title="setupjavax.setupjavax.build_jy.__author_email__
+setupjavax.setup.__author_email__
+setupjavax.setupjavax.__author_email__
+setupjavax.setupjavax.build_java.__author_email__" class="py-name" href="#" onclick="return doclink('link-2', '__author_email__', 'link-2');">__author_email__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;acue_sf2@sourceforge.net&#x27;</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-name">__license__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&quot;</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable setupjavax.setupjavax.build_jy.__uuid__=setupjavax.setupjavax.build_jy-module.html#__uuid__,Variable setupjavax.setup.__uuid__=setupjavax.setup-module.html#__uuid__,Variable setupjavax.setupjavax.__uuid__=setupjavax.setupjavax-module.html#__uuid__,Variable setupjavax.setupjavax.build_java.__uuid__=setupjavax.setupjavax.build_java-module.html#__uuid__"><a title="setupjavax.setupjavax.build_jy.__uuid__
+setupjavax.setup.__uuid__
+setupjavax.setupjavax.__uuid__
+setupjavax.setupjavax.build_java.__uuid__" class="py-name" href="#" onclick="return doclink('link-3', '__uuid__', 'link-3');">__uuid__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;1ba7bffb-c00b-4691-a3e9-e392f968e437&quot;</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="SetuplibBuildJyError"></a><div id="SetuplibBuildJyError-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="SetuplibBuildJyError-toggle" onclick="return toggle('SetuplibBuildJyError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="setupjavax.setupjavax.build_jy.SetuplibBuildJyError-class.html">SetuplibBuildJyError</a><tt class="py-op">(</tt><tt class="py-base-class">SetupJavaXError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SetuplibBuildJyError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SetuplibBuildJyError-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-comment"># REMINDER: class BuildJy(distutils.cmd.Command):</tt> </tt>
+<a name="BuildJy"></a><div id="BuildJy-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="BuildJy-toggle" onclick="return toggle('BuildJy');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="setupjavax.setupjavax.build_jy.BuildJy-class.html">BuildJy</a><tt class="py-op">(</tt><tt class="py-base-class">setuptools</tt><tt class="py-op">.</tt><tt class="py-base-class">command</tt><tt class="py-op">.</tt><tt class="py-base-class">build_py</tt><tt class="py-op">.</tt><tt class="py-base-class">build_py</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BuildJy-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="BuildJy-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-docstring">&quot;&quot;&quot;Extends &#x27;build_py&#x27; for compilation of Python and Java modules</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    for Jython.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">    &quot;&quot;&quot;</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable setupjavax.setupjavax.build_jy.BuildJy.description=setupjavax.setupjavax.build_jy.BuildJy-class.html#description,Variable setupjavax.setupjavax.build_java.BuildJava.description=setupjavax.setupjavax.build_java.BuildJava-class.html#description"><a title="setupjavax.setupjavax.build_jy.BuildJy.description
+setupjavax.setupjavax.build_java.BuildJava.description" class="py-name" href="#" onclick="return doclink('link-4', 'description', 'link-4');">description</a></tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27;Build Python and Java modules for Jython.&#x27;</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable setupjavax.setupjavax.build_jy.BuildJy.user_options=setupjavax.setupjavax.build_jy.BuildJy-class.html#user_options,Variable setupjavax.setupjavax.build_java.BuildJava.user_options=setupjavax.setupjavax.build_java.BuildJava-class.html#user_options"><a title="setupjavax.setupjavax.build_jy.BuildJy.user_options
+setupjavax.setupjavax.build_java.BuildJava.user_options" class="py-name" href="#" onclick="return doclink('link-5', 'user_options', 'link-5');">user_options</a></tt> <tt class="py-op">=</tt> <tt class="py-name">setuptools</tt><tt class="py-op">.</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="setupjavax.setupjavax.build_jy.BuildJy.user_options
+setupjavax.setupjavax.build_java.BuildJava.user_options" class="py-name" href="#" onclick="return doclink('link-6', 'user_options', 'link-5');">user_options</a></tt> <tt class="py-op">+</tt> <tt class="py-op">[</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;build-lib=&#x27;</tt><tt class="py-op">,</tt>   <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;build_py --build-lib=&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;compile&#x27;</tt><tt class="py-op">,</tt>      <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;build_py --compile&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;cp=&#x27;</tt><tt class="py-op">,</tt>          <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -cp &lt;classpath&gt;...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;deprecation&#x27;</tt><tt class="py-op">,</tt>  <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -deprecation ...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;force&#x27;</tt><tt class="py-op">,</tt>        <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;build_py --force&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;g-all&#x27;</tt><tt class="py-op">,</tt>        <tt class="py-string">&#x27;g&#x27;</tt><tt class="py-op">,</tt>  <tt class="py-string">&quot;javac -g ...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;jp=&#x27;</tt><tt class="py-op">,</tt>          <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -jar jython.jar -Dpython.path=&lt;jp&gt; ...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;no-compile&#x27;</tt><tt class="py-op">,</tt>   <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;build_py --no-compile&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;no-exec&#x27;</tt><tt class="py-op">,</tt>      <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;print only&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;nowarn&#x27;</tt><tt class="py-op">,</tt>       <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -nowarn ...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;optimize&#x27;</tt><tt class="py-op">,</tt>     <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;build_py --optimize&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;source=&#x27;</tt><tt class="py-op">,</tt>      <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -source &lt;release&gt;...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;target=&#x27;</tt><tt class="py-op">,</tt>      <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -target &lt;release&gt;...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;verb&#x27;</tt><tt class="py-op">,</tt>         <tt class="py-string">&quot;v&quot;</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -verbose...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-op">(</tt><tt class="py-string">&#x27;werror&#x27;</tt><tt class="py-op">,</tt>       <tt class="py-keyword">None</tt><tt class="py-op">,</tt> <tt class="py-string">&quot;javac -werror ...&quot;</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-op">]</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="BuildJy.initialize_options"></a><div id="BuildJy.initialize_options-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="BuildJy.initialize_options-toggle" onclick="return toggle('BuildJy.initialize_options');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="setupjavax.setupjavax.build_jy.BuildJy-class.html#initialize_options">initialize_options</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BuildJy.initialize_options-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BuildJy.initialize_options-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">setuptools</tt><tt class="py-op">.</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method setupjavax.setupjavax.build_jy.BuildJy.initialize_options()=setupjavax.setupjavax.build_jy.BuildJy-class.html#initialize_options,Method setupjavax.setupjavax.build_java.BuildJava.initialize_options()=setupjavax.setupjavax.build_java.BuildJava-class.html#initialize_options"><a title="setupjavax.setupjavax.build_jy.BuildJy.initialize_options
+setupjavax.setupjavax.build_java.BuildJava.initialize_options" class="py-name" href="#" onclick="return doclink('link-7', 'initialize_options', 'link-7');">initialize_options</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">         </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cp</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">deprecation</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">g_all</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">nowarn</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">source</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">target</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">verb</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">verbose</tt> <tt class="py-op">=</tt> <tt class="py-keyword">None</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">werror</tt> <tt class="py-op">=</tt> <tt class="py-keyword">False</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="BuildJy.finalize_options"></a><div id="BuildJy.finalize_options-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="BuildJy.finalize_options-toggle" onclick="return toggle('BuildJy.finalize_options');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="setupjavax.setupjavax.build_jy.BuildJy-class.html#finalize_options">finalize_options</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BuildJy.finalize_options-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BuildJy.finalize_options-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-name">setuptools</tt><tt class="py-op">.</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method setupjavax.setupjavax.build_jy.BuildJy.finalize_options()=setupjavax.setupjavax.build_jy.BuildJy-class.html#finalize_options,Method setupjavax.setupjavax.build_java.BuildJava.finalize_options()=setupjavax.setupjavax.build_java.BuildJava-class.html#finalize_options"><a title="setupjavax.setupjavax.build_jy.BuildJy.finalize_options
+setupjavax.setupjavax.build_java.BuildJava.finalize_options" class="py-name" href="#" onclick="return doclink('link-8', 'finalize_options', 'link-8');">finalize_options</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">         </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="BuildJy.run"></a><div id="BuildJy.run-def"><a name="L74"></a><tt class="py-lineno"> 74</tt> <a class="py-toggle" href="#" id="BuildJy.run-toggle" onclick="return toggle('BuildJy.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="setupjavax.setupjavax.build_jy.BuildJy-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BuildJy.run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BuildJy.run-expanded"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-docstring">&quot;&quot;&quot;Run command.&quot;&quot;&quot;</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">setuptools</tt><tt class="py-op">.</tt><tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt class="py-name">build_py</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method setupjavax.setupjavax.build_jy.BuildJy.run()=setupjavax.setupjavax.build_jy.BuildJy-class.html#run,Method setupjavax.setupjavax.build_java.BuildJava.run()=setupjavax.setupjavax.build_java.BuildJava-class.html#run"><a title="setupjavax.setupjavax.build_jy.BuildJy.run
+setupjavax.setupjavax.build_java.BuildJava.run" class="py-name" href="#" onclick="return doclink('link-9', 'run', 'link-9');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-string">&#x27;javac&#x27;</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-op">]</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">deprecation</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-deprecation&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">nowarn</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-nowarn&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">werror</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-werror&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">     </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">verb</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-verbose&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">g_all</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-g&#x27;</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cp</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-cp %s&#x27;</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cp</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">source</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-source %s&#x27;</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">source</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">target</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">&#x27;-target %s&#x27;</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">target</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">exit_code</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">pkg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sorted</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">distribution</tt><tt class="py-op">.</tt><tt class="py-name">packages</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sorted</tt><tt class="py-op">(</tt><tt class="py-name">find_files</tt><tt class="py-op">(</tt><tt class="py-name">pkg</tt><tt class="py-op">,</tt> <tt class="py-string">&#x27;*.java&#x27;</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                <tt class="py-name">call</tt> <tt class="py-op">=</tt> <tt class="py-string">&#x27; &#x27;</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">command</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27; &quot;&#x27;</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">&#x27;&quot;&#x27;</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                <tt class="py-name">print</tt><tt class="py-op">(</tt><tt class="py-name">call</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-name">exit_code</tt> <tt class="py-op">+=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-name">call</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                <tt class="py-name">dst0</tt> <tt class="py-op">=</tt> <tt class="py-string">&quot;build&quot;</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-string">&quot;lib&quot;</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt>    </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-name">print</tt><tt class="py-op">(</tt><tt class="py-string">&quot;copying %s -&gt; %s&quot;</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">,</tt> <tt class="py-name">dst0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">dst0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">makedirs</tt><tt class="py-op">(</tt><tt class="py-name">dst0</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">copy</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">,</tt> <tt class="py-name">dst0</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-name">print</tt><tt class="py-op">(</tt><tt class="py-string">&quot;copying %s -&gt; %s&quot;</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">&quot;class&quot;</tt><tt class="py-op">,</tt> <tt class="py-name">dst0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">copy</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">&quot;class&quot;</tt><tt class="py-op">,</tt> <tt class="py-name">dst0</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-name">exit_code</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>&nbsp;&nbsp;&nbsp;<a target="_top"
+        href="../index_part_apiref_scaled.html">Top</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th>
+          &nbsp;&nbsp;&nbsp;
+          <a target="_parent" href="frames.html">&larr;</a>
+          &nbsp;
+      <th>
+      <th>
+          &nbsp;
+          <a target="_parent" href="frames-right.html">&rarr;</a>
+          &nbsp;&nbsp;&nbsp;
+      </th>
+
+  <!-- Overview link - api reference-->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Overview</a>&nbsp;&nbsp;&nbsp;</th>
+
+
+  <!-- Module -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Module</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Class -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="class-tree.html">Class</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+  <!--
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Tree</a>&nbsp;&nbsp;&nbsp;</th>
+  -->
+  
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+              <th>&nbsp;&nbsp;&nbsp;<a
+                href="http://pypi.python.org/pypi/setupjavax">@www</a>&nbsp;&nbsp;&nbsp;</th>
+          </tr></table></th>
+
+  <!-- About link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="about.html">About</a>&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+</table>
+<table class="footTable" border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+        Copyright(C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="https://arnocan.wordpress.com"
+        >https://arnocan.wordpress.com</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="lest" class="footer">
+    Generated by Epydoc 4.0.4 / Python-3.8 / fedora27 on Mon Dec  9 07:03:34 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
